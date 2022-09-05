@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Github Api</title>
+</head>
+<body>
+  <div class="container">
+    <div class="container-center">
+      <section class="search">
+        <h1>Github Kullanıcılarını Arayın</h1>
+        <h4>Bir kullanıcı adı girin ve kullanıcının bilgilerine ulaşın!</h4>
+        <form class="search-box">
+          <input id="search-area" type="text" placeholder="Github Kullanıcı Adı">
+          <button type="submit">Ara</button>
+        </form>
+        <div class="alert">
+        </div>
+        <div class="user">
+         
+        </div>
+      </section>
+  
+      <section class="repository">
+        <h1>En Son Repolar</h1>
+        <div class="repos">
+         
+        </div>
+      </section>
+  
+      <section class="last-searches">
+        <h1>Son Aramalar</h1>
+        <div class="searches"> 
+          
+        </div>
+        <button id="clear-all">Son Arananları Temizle</button>
+      </section>
+    </div>
+  </div>
+
+  <script src="storage.js"></script>
+  <script src="ui.js"></script>
+  <script src="github.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
