@@ -53,14 +53,23 @@ class UI {
 
     if (!list.includes(value)) {
       const div = document.createElement("div");
-      div.className = ("link");
+      div.className = "link";
 
       const p = document.createElement("p");
       p.textContent = value;
 
+      const button = document.createElement("button");
+      button.className = "clear-item";
+      button.innerHTML = "Sil";
+
       div.append(p);
+      div.append(button)
       searches.append(div);
     }
+  }
+
+  deleteItemFromUI(element) {
+    element.parentElement.remove();
   }
 
   clearAll() {

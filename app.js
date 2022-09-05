@@ -10,6 +10,7 @@ function eventListeners() {
   form.addEventListener("submit", showRepositories);
   document.addEventListener("DOMContentLoaded", getAllSearched);
   clearAllButton.addEventListener("click", clearLastSearches);
+  searches.addEventListener("click", clearItem);
 }
 
 const showRepositories = (e) => {
@@ -38,8 +39,9 @@ const getAllSearched = () => {
 
   lastSearchList.forEach(item => (
     searches.innerHTML += `
-      <div>
+      <div class="link">
         <p>${item}</p>
+        <button class="clear-item">Sil</button>
       </div>
     `
   ))
@@ -49,6 +51,13 @@ const getAllSearched = () => {
 const clearLastSearches = () => {
   ui.clearAll();
   Storage.clearStorage();
+}
+
+const clearItem = (e) => {
+  if (e.target.className === "clear-item") {
+    ui.deleteItemFromUI(e.target);
+    Storage.deleteItemFromStorage(e.target.previousElementSibling.textContent)
+  }
 }
 
 eventListeners();

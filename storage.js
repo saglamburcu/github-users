@@ -23,6 +23,18 @@ class Storage {
     return searchList;
   }
 
+  static deleteItemFromStorage(element) {
+    let searchList = this.getLocalStorage();
+
+    searchList.forEach((item, index) => {
+      if (item === element) {
+        searchList.splice(index, 1);
+
+        localStorage.setItem("lastSearches", JSON.stringify(searchList))
+      }
+    })
+  }
+
   static clearStorage() {
     localStorage.removeItem("lastSearches");
   }
